@@ -1,0 +1,13 @@
+(venv) theia:devops-capstone-project$ curl -i -X POST http://localhost:8080/accounts \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Parth Bedekar", "email": "parth@example.com", "address": "Pune, India", "phone_number": "9999999999", "date_joined": "2026-10-24"}'
+HTTP/1.1 201 CREATED
+Server: Werkzeug/2.1.2 Python/3.9.25
+Date: Sat, 24 Oct 2026 13:41:26 GMT
+Content-Type: application/json
+Content-Length: 141
+Location: /
+Connection: close
+
+{"address":"Pune, India","date_joined":"2026-10-24","email":"parth@example.com","id":161,"name":"Parth Bedekar","phone_number":"9999999999"}
+(venv) theia:devops-capstone-project$ 
