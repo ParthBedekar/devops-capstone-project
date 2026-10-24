@@ -110,3 +110,17 @@ def check_content_type(media_type):
         status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
         f"Content-Type must be {media_type}",
     )
+
+
+@app.route("/accounts", methods=["GET"])
+def list_accounts():
+    """
+    List all Accounts
+    This endpoint will list all Accounts
+    """
+    app.logger.info("Request to list Accounts")
+
+    accounts = Account.all()
+    account_list = [account.serialize() for account in accounts]
+
+    return jsonify(account_list), status.HTTP_200_OK
